@@ -3,7 +3,6 @@ This repository is for compiling open-source software SeisSol on KAUST workstati
 
 ## Set path
 export HOMESW=/home/palgunkh/Documents/Software/SeisLib
-
 export PATH=$HOMESW/bin:$PATH
 
 export LIBRARY_PATH=$HOMESW/lib:$LIBRARY_PATH
