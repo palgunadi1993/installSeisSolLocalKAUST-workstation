@@ -81,98 +81,97 @@ CC=cc CXX=CC FC=ftn CMAKE_PREFIX_PATH=/project/k1488/kadek/myLibs/cmakeSeisSol:$
 
 
 
-```
- ASAGI                            OFF                                                                                                    
- BUILD_SHARED_LIBS                OFF                                                                                                    
- CMAKE_BUILD_TYPE                 Release                                                                                                
- CMAKE_INSTALL_PREFIX             /usr/local                                                                                             
- COMMTHREAD                       OFF                                                                                                    
- DEVICE_ARCH                      none                                                                                                   
- DEVICE_SUB_ARCH                  none                                                                                                   
- DYNAMIC_RUPTURE_METHOD           quadrature                                                                                             
- EQUATIONS                        elastic                                                                                                
- GEMM_TOOLS_LIST                  LIBXSMM,PSpaMM                                                                                         
- HDF5                             ON                                                                                                     
- HDF5_C_LIBRARY_dl                /usr/lib64/libdl.so                                                                                    
- HDF5_C_LIBRARY_hdf5              /project/k1488/kadek/myLibs/cmakeSeisSol/lib/libhdf5.a                                                 
- HDF5_C_LIBRARY_hdf5_hl           /project/k1488/kadek/myLibs/cmakeSeisSol/lib/libhdf5_hl.a                                              
- HDF5_C_LIBRARY_m                 /usr/lib64/libm.so                                                                                     
- HDF5_C_LIBRARY_z                 /usr/lib64/libz.so                                                                                     
- HOST_ARCH                        hsw                                                                                                    
- LOG_LEVEL                        warning                                                                                                
- LOG_LEVEL_MASTER                 info                                                                                                   
- Libxsmm_executable_PROGRAM       /project/k1488/kadek/myLibs/cmakeSeisSol/bin/libxsmm_gemm_generator                                    
- MEMKIND                          OFF                                                                                                    
- MEMORY_LAYOUT                    auto                                                                                                   
- METIS                            ON                                                                                                     
- MPI                              ON                                                                                                     
- NETCDF                           ON                                                                                                     
- NUMBER_OF_FUSED_SIMULATIONS      1                                                                                                      
- NUMBER_OF_MECHANISMS             0                                                                                                      
- OPENMP                           ON                                                                                                     
- ORDER                            5                                                                                                      
- PLASTICITY                       OFF                                                                                                    
- PLASTICITY_METHOD                nb                                                                                                     
- PRECISION                        double                                                                                                 
- PSpaMM_PROGRAM                   /project/k1488/kadek/myLibs/cmakeSeisSol/bin/pspamm.py                                                 
- SIONLIB                          OFF                                                                                                    
- TESTING                          OFF                                                                                                    
- TESTING_GENERATED                OFF                                                                                                    
- YAML-CPP_DIR                     YAML-CPP_DIR-NOTFOUND                                                                                  
- netCDF_DIR                       netCDF_DIR-NOTFOUND                                                                                    
+> ASAGI                            OFF                                                                                                    
+> BUILD_SHARED_LIBS                OFF                                                                                                    
+> CMAKE_BUILD_TYPE                 Release                                                                                                
+> CMAKE_INSTALL_PREFIX             /usr/local                                                                                             
+> COMMTHREAD                       OFF                                                                                                    
+> DEVICE_ARCH                      none                                                                                                   
+> DEVICE_SUB_ARCH                  none                                                                                                   
+> DYNAMIC_RUPTURE_METHOD           quadrature                                                                                             
+> EQUATIONS                        elastic                                                                                                
+> GEMM_TOOLS_LIST                  LIBXSMM,PSpaMM                                                                                         
+> HDF5                             ON                                                                                                     
+> HDF5_C_LIBRARY_dl                /usr/lib64/libdl.so                                                                                    
+> HDF5_C_LIBRARY_hdf5              /project/k1488/kadek/myLibs/cmakeSeisSol/lib/libhdf5.a                                                 
+> HDF5_C_LIBRARY_hdf5_hl           /project/k1488/kadek/myLibs/cmakeSeisSol/lib/libhdf5_hl.a                                              
+> HDF5_C_LIBRARY_m                 /usr/lib64/libm.so                                                                                     
+> HDF5_C_LIBRARY_z                 /usr/lib64/libz.so                                                                                     
+> HOST_ARCH                        hsw                                                                                                    
+> LOG_LEVEL                        warning                                                                                                
+> LOG_LEVEL_MASTER                 info                                                                                                   
+> Libxsmm_executable_PROGRAM       /project/k1488/kadek/myLibs/cmakeSeisSol/bin/libxsmm_gemm_generator                                    
+> MEMKIND                          OFF                                                                                                    
+> MEMORY_LAYOUT                    auto                                                                                                   
+> METIS                            ON                                                                                                     
+> MPI                              ON                                                                                                     
+> NETCDF                           ON                                                                                                     
+> NUMBER_OF_FUSED_SIMULATIONS      1                                                                                                      
+> NUMBER_OF_MECHANISMS             0                                                                                                      
+> OPENMP                           ON                                                                                                     
+> ORDER                            5                                                                                                      
+> PLASTICITY                       OFF                                                                                                    
+> PLASTICITY_METHOD                nb                                                                                                     
+> PRECISION                        double                                                                                                 
+> PSpaMM_PROGRAM                   /project/k1488/kadek/myLibs/cmakeSeisSol/bin/pspamm.py                                                 
+> SIONLIB                          OFF                                                                                                    
+> TESTING                          OFF                                                                                                    
+> TESTING_GENERATED                OFF                                                                                                    
+> YAML-CPP_DIR                     YAML-CPP_DIR-NOTFOUND                                                                                  
+> netCDF_DIR                       netCDF_DIR-NOTFOUND                                                                                    
 
 
-```
+
 
 
 ## Configuration for job submission
-```
-#!/bin/bash
-#
-#SBATCH --job-name=TPVtest
-#SBATCH --partition=workq
-#SBATCH --export=ALL
-#SBATCH --chdir=/project/k1488/kadek/tpvTest
-#SBATCH --output=logs/dfn.o%j
-#SBATCH --error=logs/dfn.e%j
 
+>#!/bin/bash
+>#
+>#SBATCH --job-name=TPVtest
+>#SBATCH --partition=workq
+>#SBATCH --export=ALL
+>#SBATCH --chdir=/project/k1488/kadek/tpvTest
+>#SBATCH --output=logs/dfn.o%j
+>#SBATCH --error=logs/dfn.e%j
+>
+>
+>#SBATCH --nodes=32
+>#SBATCH --ntasks-per-node=1
+>#SBATCH --cpus-per-task=64
+>
+>
+>#SBATCH --time=03:00:00
+>#SBATCH --no-requeue
+>
+>
+>#SBATCH --account=k1488
+>
+>date
+>echo 'working directory is'
+>pwd
+>echo 'printing modules'
+>module swap PrgEnv-cray PrgEnv-intel
+>module load cdt
+>
+>#export PROC_BIND=spread
+>export MP_SINGLE_THREAD=no
+>export OMP_PLACES="cores(62)"
+>export OMP_NUM_THREADS=62
+>export KMP_AFFINITY=compact,granularity=thread
+>
+>export MPICH_MAX_THREAD_SAFETY=multiple
+>export XDMFWRITER_ALIGNMENT=8388608
+>export XDMFWRITER_BLOCK_SIZE=8388608
+>export SC_CHECKPOINT_ALIGNMENT=8388608
+>export SEISSOL_CHECKPOINT_ALIGNMENT=8388608
+>export SEISSOL_CHECKPOINT_DIRECT=1
+>export ASYNC_MODE=THREAD
+>export ASYNC_BUFFER_ALIGNMENT=8388608
+>
+>
+>export LD_LIBRARY_PATH=/project/k1488/kadek/myLibs/ASAGI/build/lib:$LD_LIBRARY_PATH
+>echo 'setting stripe size'
+>lfs setstripe -c 144 output
 
-#SBATCH --nodes=32
-#SBATCH --ntasks-per-node=1
-#SBATCH --cpus-per-task=64
-
-
-#SBATCH --time=03:00:00
-#SBATCH --no-requeue
-
-
-#SBATCH --account=k1488
-
-date
-echo 'working directory is'
-pwd
-echo 'printing modules'
-module swap PrgEnv-cray PrgEnv-intel
-module load cdt
-
-#export PROC_BIND=spread
-export MP_SINGLE_THREAD=no
-export OMP_PLACES="cores(62)"
-export OMP_NUM_THREADS=62
-export KMP_AFFINITY=compact,granularity=thread
-
-export MPICH_MAX_THREAD_SAFETY=multiple
-export XDMFWRITER_ALIGNMENT=8388608
-export XDMFWRITER_BLOCK_SIZE=8388608
-export SC_CHECKPOINT_ALIGNMENT=8388608
-export SEISSOL_CHECKPOINT_ALIGNMENT=8388608
-export SEISSOL_CHECKPOINT_DIRECT=1
-export ASYNC_MODE=THREAD
-export ASYNC_BUFFER_ALIGNMENT=8388608
-
-
-export LD_LIBRARY_PATH=/project/k1488/kadek/myLibs/ASAGI/build/lib:$LD_LIBRARY_PATH
-echo 'setting stripe size'
-lfs setstripe -c 144 output
-```
 
