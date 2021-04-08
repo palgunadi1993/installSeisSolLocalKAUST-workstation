@@ -21,6 +21,9 @@ export CMAKE_PREFIX_PATH=$HOMESW:$CMAKE_PREFIX_PATH<br/>
 export EDITOR=vi<br/>
 export CPATH=$HOME/include:$CPATH<br/>
 
+## ASAGI path
+export PKG_CONFIG_PATH=$HOMESW/ASAGI/build/lib/pkgconfig:$PKG_CONFIG_PATH<br/>
+export LD_LIBRARY_PATH=$HOMESW/ASAGI/build/lib:$LD_LIBRARY_PATH<br/>
 
 ## HDF5
 wget https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-1.8/hdf5-1.8.21/src/hdf5-1.8.21.tar.bz2<br/>
