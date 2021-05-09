@@ -124,7 +124,8 @@ CC=cc CXX=CC FC=ftn CMAKE_PREFIX_PATH=/project/k1488/kadek/myLibs/cmakeSeisSol:$
  netCDF_DIR                       netCDF_DIR-NOTFOUND                                                                                    
 ```
 
-
+### Compile
+make -j24
 
 
 ## Configuration for job submission
