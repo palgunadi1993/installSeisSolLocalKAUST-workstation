@@ -9,7 +9,7 @@ ssh cdl5<br/>
 ## load necessary modules
 module swap PrgEnv-cray PrgEnv-intel<br/>
 module load cdt<br/>
-module load python/3.8.0<br/>
+module load python/3.8.0-cdl<br/>
 
 ## set path
 export HOMESW=/project/k1488/kadek/myLibs/cmakeSeisSol<br/>
@@ -45,7 +45,6 @@ git clone https://github.com/peterwauligmann/PSpaMM.git<br/>
 ln -s $(pwd)/PSpaMM/pspamm.py bin/<br/>
 
 ## GemmForge
-module load python/3.8.0-cdl<br/>
 pip install gemmforge<br/>
 
 ## CMAKE
