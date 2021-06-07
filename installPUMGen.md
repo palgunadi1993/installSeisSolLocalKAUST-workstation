@@ -4,7 +4,7 @@ This repository is for compiling open-source PUMGen on KAUST Super Computer Faci
 # Compiling PUMGen cmake on Shaheen II
 
 ## Use cdl5 environment
-ssh -X cdl5<br/>
+ssh cdl5<br/>
 
 ## Load necessary modules
 module swap PrgEnv-cray PrgEnv-intel<br/>
@@ -23,8 +23,7 @@ export CPATH=$HOME/include:$CPATH<br/>
 
 ## Compiling PUMGen with Simmodeler
 mkdir simmodeler && cd simmodeler<br/>
-<br/>
-Create empty bash file and copy the following script (e.g. downloadFiles.sh):<br/>
+Create empty bash file and copy the following script (e.g. `downloadFiles.sh`):<br/>
 
 ```bash
 #!/bin/bash -ex
@@ -86,9 +85,8 @@ for comp in ${components[@]}; do
 done
 ```
 ### Run the script and download simmodeler
-`bash downloadFiles.sh $username $passwd 0 $simmodelerVersion`<br/>
-<br/>
-Extract all files with the following script (e.g. extractFiles.sh):<br/>
+`:$ bash downloadFiles.sh $username $passwd 0 $simmodelerVersion`<br/>
+Extract all files with the following script (e.g. `extractFiles.sh`):<br/>
 ```bash
 for filename in *.tgz
 do
@@ -96,8 +94,7 @@ do
 done
 ```
 ### Run the script and extract files
-`bash extractFiles.sh`<br/>
-<br/>
+`:$ bash extractFiles.sh`<br/>
 rm *tgz<br/>
 cd ..<br/>
 
@@ -107,7 +104,7 @@ git clone https://github.com/SCOREC/core.git core<br/>
 cd core<br/>
 
 ## Setup the configuration
-Use the following script to install pumi (e.g. compile_pumi.sh):<br/>
+Use the following script to install pumi (e.g. `compile_pumi.sh`):<br/>
 ```bash
 mkdir build && cd build
 echo Now in $PWD building with simmetrix
@@ -129,7 +126,7 @@ make -j 24 VERBOSE=1
 make install
 ```
 ### Run the script and install the pumi
-`bash compile_pumi.sh`<br/>
+`:$ bash compile_pumi.sh`<br/>
 cd ..<br/>
 
 # Install PUMGen
@@ -138,7 +135,7 @@ cd PUMGen<br/>
 git submodule update --init<br/>
 
 ## Setup the configuration
-Use the following script to setup PUMGen (e.g. install_pumgen.sh):<br/>
+Use the following script to setup PUMGen (e.g. `install_pumgen.sh`):<br/>
 ```bash
 mkdir build
 cd build
@@ -149,4 +146,4 @@ cd build
     -DCMAKE_C_COMPILER=cc -DCMAKE_CXX_COMPILER=CC
 make -j 24
 ```
-If installation is succesful, the executable file should be in `build/pumgen`<br/>
+If your installation is succesful, the executable file should be in `build/pumgen`<br/>
