@@ -77,7 +77,7 @@ cd SeisSol<br/>
 git submodule update --init<br/>
 mkdir build-release && cd build-release<br/>
 
-CC=cc CXX=CC FC=ftn CMAKE_PREFIX_PATH=/project/k1488/kadek/myLibs/cmakeSeisSol:$CMAKE_PREFIX_PATH PKG_CONFIG_PATH=/project/k1488/kadek/myLibs/cmakeSeisSol/lib/pkgconfig/:$PKG_CONFIG_PATH ../../bin/cmake/bin/cmake -DNETCDF=ON -DMETIS=ON -DPLASTICITY=OFF -DCOMMTHREAD=OFF -DASAGI=OFF -DHDF5=ON -DCMAKE_BUILD_TYPE=Release -DTESTING=OFF  -DLOG_LEVEL=warning -DLOG_LEVEL_MASTER=info -DHOST_ARCH=hsw -DPRECISION=double ..<br/>
+CC=cc CXX=CC FC=ftn CMAKE_PREFIX_PATH=$HOMESW:$CMAKE_PREFIX_PATH PKG_CONFIG_PATH=$HOMESW/lib/pkgconfig/:$PKG_CONFIG_PATH $HOMESW/bin/cmake/bin/cmake -DNETCDF=ON -DMETIS=ON -DPLASTICITY=OFF -DCOMMTHREAD=OFF -DASAGI=OFF -DHDF5=ON -DCMAKE_BUILD_TYPE=Release -DTESTING=OFF  -DLOG_LEVEL=warning -DLOG_LEVEL_MASTER=info -DHOST_ARCH=hsw -DPRECISION=double ..<br/>
 
 $HOMESW/bin/cmake/bin/ccmake .<br/>
 
