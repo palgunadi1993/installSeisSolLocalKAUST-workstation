@@ -72,6 +72,7 @@ make install <br/>
 
 ## SeisSol
 export CMAKE_PREFIX_PATH=$HOMESW<br/>
+module load gcc<br/>
 git clone https://github.com/SeisSol/SeisSol.git<br/>
 cd SeisSol<br/>
 git submodule update --init<br/>
