@@ -3,9 +3,6 @@ This repository is for compiling open-source software SeisSol on KAUST Super Com
 
 # Compiling SeisSol cmake on Shaheen
 
-## use cdl5 environment
-ssh cdl5<br/>
-
 ## load necessary modules
 module swap PrgEnv-cray PrgEnv-intel<br/>
 module load cdt<br/>
