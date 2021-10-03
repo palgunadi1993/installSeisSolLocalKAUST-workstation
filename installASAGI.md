@@ -20,9 +20,9 @@ export EDITOR=vi</br>
 export CPATH=$HOME/include:$CPATH</br>
 
 ## Set compiler options
-export FC=ftn</br>
-export CXX=CC</br>
-export CC=cc</br>
+export FC=ftn or FC=mpifc (for gcc)</br>
+export CXX=CC or CXX=mpigxx (for gcc)</br>
+export CC=cc or CC=mpigcc (for gcc)</br>
 
 ## Clone ASAGI and update submodules
 git clone https://github.com/TUM-I5/ASAGI.git</br>
