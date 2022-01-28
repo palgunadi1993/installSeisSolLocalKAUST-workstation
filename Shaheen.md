@@ -6,7 +6,6 @@ This repository is for compiling open-source software SeisSol on KAUST Super Com
 ## load necessary modules
 module swap PrgEnv-cray PrgEnv-intel<br/>
 module load cdt<br/>
-module load python/3.8.0-cdl<br/>
 
 ## set path
 export HOMESW=/project/k1488/kadek/myLibs/cmakeSeisSol<br/>
