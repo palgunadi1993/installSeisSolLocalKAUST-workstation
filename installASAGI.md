@@ -6,8 +6,8 @@ ssh -X cdl5</br>
 
 ## Load necessary modules
 module swap PrgEnv-cray PrgEnv-intel</br>
-module load cdt</br>
-module load python/3.8.0-cdl</br>
+module unload intel/2021.4.0</br>
+module load intel/19.0.5.281</br>
 
 ## Set path
 export HOMESW=/project/k1488/kadek/myLibs/cmakeSeisSol</br>
@@ -33,7 +33,7 @@ git submodule update --init</br>
 mkdir build</br>
 cd build</br>
 export CMAKE_PREFIX_PATH=$CMAKE_PREFIX_PATH</br>
-$HOWESW/bin/cmake/bin/cmake ../ -DCMAKE_INSTALL_PREFIX=$HOMESW/ASAGI/build</br>
+$HOMESW/bin/cmake/bin/cmake ../ -DCMAKE_INSTALL_PREFIX=$HOMESW/ASAGI/build</br>
 make -j8</br>
 make install</br>
 
