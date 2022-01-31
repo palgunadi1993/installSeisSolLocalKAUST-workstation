@@ -68,6 +68,34 @@ CFLAGS="-fPIC ${CFLAGS}" CC=h5pcc ./configure --enable-shared=no --prefix=$HOMES
 make -j8<br/>
 make install <br/>
 
+## yaml-cpp
+git clone https://github.com/jbeder/yaml-cpp.git<br/>
+cd yaml-cpp<br/>
+mkdir build && cd build<br/>
+CC=cc CXX=CC FC=ftn $HOMESW/bin/cmake/bin/cmake ../ -DCMAKE_INSTALL_PREFIX=$HOMESW<br/>
+make -j4<br/>
+make install<br/>
+cd ../.. <br/>
+
+## ImpalaJIT
+git clone https://github.com/uphoffc/ImpalaJIT.git<br/>
+cd ImpalaJIT<br/>
+mkdir build && cd build<br/>
+CC=cc CXX=CC FC=ftn $HOMESW/bin/cmake/bin/cmake ../ -DCMAKE_INSTALL_PREFIX=$HOMESW<br/>
+make -j4 <br/>
+make install<br/>
+cd ../.. <br/>
+
+## easi
+git clone https://github.com/SeisSol/easi.git<br/>
+cd easi<br/>
+mkdir build && cd build<br/>
+CC=cc CXX=CC FC=ftn $HOMESW/bin/cmake/bin/cmake ../ -DCMAKE_PREFIX_PATH=$HOMESW -DCMAKE_INSTALL_PREFIX=$HOMESW -DASAGI=OFF -DIMPALAJIT=ON<br/>
+make -j4 install<br/>
+
+if ASAGI is installed, turn it ON.<br/>
+
+
 ## SeisSol
 export CMAKE_PREFIX_PATH=$HOMESW<br/>
 module load gcc/9.3.0<br/>
