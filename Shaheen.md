@@ -86,6 +86,15 @@ make -j4 <br/>
 make install<br/>
 cd ../.. <br/>
 
+## Eigen3
+wget https://gitlab.com/libeigen/eigen/-/archive/3.4.0/eigen-3.4.0.tar.gz<br/>
+tar -xf eigen-3.4.0.tar.gz<br/>
+cd eigen-3.4.0<br/>
+mkdir build && cd build<br/>
+cmake .. -DCMAKE_INSTALL_PREFIX=$HOMESW<br/>
+make install<br/>
+cd ../..<br/>
+
 ## easi
 git clone https://github.com/SeisSol/easi.git<br/>
 cd easi<br/>

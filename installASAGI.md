@@ -13,7 +13,7 @@ module load intel/19.0.5.281</br>
 export HOMESW=/project/k1488/kadek/myLibs/cmakeSeisSol</br>
 export PATH=$HOMESW/bin:$PATH</br>
 export LIBRARY_PATH=$HOMESW/lib:$LIBRARY_PATH</br>
-export LD_LIBRARY_PATH=$HOMESW/lib:$LD_LIBRARY_PATH</br>
+export LD_LIBRARY_PATH=$HOMESW/lib:$HOMESW/netcdf-4.6.1:$LD_LIBRARY_PATH</br>
 export PKG_CONFIG_PATH=$HOMESW/lib/pkgconfig:$PKG_CONFIG_PATH</br>
 export CMAKE_PREFIX_PATH=$HOMESW:$CMAKE_PREFIX_PATH</br>
 export EDITOR=vi</br>
