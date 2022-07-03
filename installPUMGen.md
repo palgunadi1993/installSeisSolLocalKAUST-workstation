@@ -140,12 +140,62 @@ Use the following script to setup PUMGen (e.g. `install_pumgen.sh`):<br/>
 ```bash
 mkdir build
 cd build
-module load cray-hdf5-parallel
+
 $HOMESW/bin/cmake/bin/cmake .. -DCMAKE_PREFIX_PATH=/project/k1587/kadek/meshing_software/core \
     -DSIMMETRIX=ON \
     -DSIMMETRIX_ROOT=/project/k1587/kadek/myLibs/meshing_software/simmodeler/16.0-220623/ -DSIM_MPI=mpich3 \
     -DCMAKE_BUILD_TYPE=Release\
     -DCMAKE_C_COMPILER=cc -DCMAKE_CXX_COMPILER=CC
-make -j 24
 ```
+
+$HOMESW/bin/cmake/bin/cmake . (here using hdf5 1.18.21)
+```bash
+ APF_LIB                          /project/k1587/kadek/meshing_software/core/lib/libapf.a            
+ APF_SIM_INCLUDE_DIR              /project/k1587/kadek/meshing_software/core/include                 
+ APF_SIM_LIB                      /project/k1587/kadek/meshing_software/core/lib/libapf_sim.a        
+ APF_ZOLTAN_INCLUDE_DIR           /project/k1587/kadek/meshing_software/core/include                 
+ APF_ZOLTAN_LIB                   /project/k1587/kadek/meshing_software/core/lib/libapf_zoltan.a     
+ CMAKE_BUILD_TYPE                 Release                                                            
+ CMAKE_INSTALL_PREFIX             /usr/local                                                         
+ GMI_INCLUDE_DIR                  /project/k1587/kadek/meshing_software/core/include                 
+ GMI_LIB                          /project/k1587/kadek/meshing_software/core/lib/libgmi.a            
+ GMI_SIM_INCLUDE_DIR              /project/k1587/kadek/meshing_software/core/include                 
+ GMI_SIM_LIB                      /project/k1587/kadek/meshing_software/core/lib/libgmi_sim.a        
+ HDF5_C_LIBRARY_dl                /usr/lib64/libdl.so                                                
+ HDF5_C_LIBRARY_hdf5              /project/k1587/kadek/myLibs/cmakeSeisSolNew/lib/libhdf5.a          
+ HDF5_C_LIBRARY_hdf5_hl           /project/k1587/kadek/myLibs/cmakeSeisSolNew/lib/libhdf5_hl.a       
+ HDF5_C_LIBRARY_m                 /usr/lib64/libm.so                                                 
+ HDF5_C_LIBRARY_z                 /usr/lib64/libz.so                                                 
+ LION_INCLUDE_DIR                 /project/k1587/kadek/meshing_software/core/include                 
+ LION_LIB                         /project/k1587/kadek/meshing_software/core/lib/liblion.a           
+ LOG_LEVEL                        info                                                               
+ MA_INCLUDE_DIR                   /project/k1587/kadek/meshing_software/core/include                 
+ MA_LIB                           /project/k1587/kadek/meshing_software/core/lib/libma.a             
+ MDS_INCLUDE_DIR                  /project/k1587/kadek/meshing_software/core/include                 
+ MDS_LIB                          /project/k1587/kadek/meshing_software/core/lib/libmds.a            
+ MESH_SIM_INCLUDE_DIR             /project/k1587/kadek/myLibs/meshing_software/simmodeler/16.0-220623
+ MTH_INCLUDE_DIR                  /project/k1587/kadek/meshing_software/core/include                 
+ MTH_LIB                          /project/k1587/kadek/meshing_software/core/lib/libmth.a            
+ NETCDF                           ON                                                                 
+ PARASOLID                        OFF                                                                
+ PCU_INCLUDE_DIR                  /project/k1587/kadek/meshing_software/core/include                 
+ PCU_LIB                          /project/k1587/kadek/meshing_software/core/lib/libpcu.a            
+ SIMMETRIX                        ON                                                                 
+ SIMMETRIX_ROOT                   /project/k1587/kadek/myLibs/meshing_software/simmodeler/16.0-220623
+ SIM_DISCRETE_LIB                 /project/k1587/kadek/myLibs/meshing_software/simmodeler/16.0-220623
+ SIM_MESHING_LIB                  /project/k1587/kadek/myLibs/meshing_software/simmodeler/16.0-220623
+ SIM_MESH_TOOLS_LIB               /project/k1587/kadek/myLibs/meshing_software/simmodeler/16.0-220623
+ SIM_MODEL_LIB                    /project/k1587/kadek/myLibs/meshing_software/simmodeler/16.0-220623
+ SIM_MPI                          mpich3                                                             
+ SIM_PARTITINED_WRAPPER_LIB       /project/k1587/kadek/myLibs/meshing_software/simmodeler/16.0-220623
+ SIM_PARTITIONED_MESH_LIB         /project/k1587/kadek/myLibs/meshing_software/simmodeler/16.0-220623
+ SIM_PARTITIONED_MESH_MPI_LIB     /project/k1587/kadek/myLibs/meshing_software/simmodeler/16.0-220623
+ SIM_PS_KRNL_LIB                  /project/k1587/kadek/myLibs/meshing_software/simmodeler/16.0-220623
+ TIRPC                            TIRPC-NOTFOUND                                                     
+ easi_DIR                         /project/k1587/kadek/myLibs/cmakeSeisSolNew/lib64/cmake/easi       
+ impalajit_DIR                    /project/k1587/kadek/myLibs/cmakeSeisSolNew/lib64/cmake/impalajit  
+ yaml-cpp_DIR                     /project/k1587/kadek/myLibs/cmakeSeisSolNew/share/cmake/yaml-cpp   
+```
+Turn NETCDF ON
+
 If your installation is succesful, the executable file should be in `build/pumgen`<br/>
