@@ -101,6 +101,7 @@ cd ..<br/>
 # Install PUMI
 
 git clone https://github.com/SCOREC/core.git core<br/>
+git submodule update --init<br/>
 cd core<br/>
 
 ## Setup the configuration
@@ -108,19 +109,19 @@ Use the following script to install pumi (e.g. `compile_pumi.sh`):<br/>
 ```bash
 mkdir build && cd build
 echo Now in $PWD building with simmetrix
-cmake .. \
+$HOMESW/bin/cmake/bin/cmake .. \
   -DCMAKE_C_COMPILER=cc \
   -DCMAKE_CXX_COMPILER=CC \
   -DCMAKE_C_FLAGS="-O2 -g -Wall" \
   -DCMAKE_CXX_FLAGS="-O2 -g -Wall" \
   -DENABLE_SIMMETRIX=ON \
   -DSIM_MPI="mpich3" \
-  -DSIMMETRIX_LIB_DIR=/project/k1488/kadek/myLibs/PUMGen_SeisSol/simmodeler/15.0-210501/lib/x64_rhel7_gcc48/ \
-  -DSIMMETRIX_INCLUDE_DIR=/project/k1488/kadek/myLibs/PUMGen_SeisSol/simmodeler/15.0-210501/include/ \
+  -DSIMMETRIX_LIB_DIR=/project/k1587/kadek/myLibs/meshing_software/simmodeler/16.0-220623/lib/x64_rhel7_gcc48/ \
+  -DSIMMETRIX_INCLUDE_DIR=/project/k1587/kadek/myLibs/meshing_software/simmodeler/16.0-220623/include/ \
   -DMPIRUN="srun" \
   -DMPIRUN_PROCFLAG="-n"\
-  -DPARMETIS_INCLUDE_DIR=/project/k1488/kadek/myLibs/meshing_software/parmetis-cc/include/ \
-  -DCMAKE_INSTALL_PREFIX=/project/k1488/kadek/myLibs/PUMGen_SeisSol/core \
+  -DPARMETIS_INCLUDE_DIR=/project/k1587/kadek/myLibs/cmakeSeisSolNew/include/ \
+  -DCMAKE_INSTALL_PREFIX=/project/k1587/kadek/meshing_software/core \
   -DSKIP_SIMMETRIX_VERSION_CHECK=ON
 make -j 24 VERBOSE=1
 make install
@@ -139,9 +140,10 @@ Use the following script to setup PUMGen (e.g. `install_pumgen.sh`):<br/>
 ```bash
 mkdir build
 cd build
-/project/k1488/kadek/myLibs/cmakeSeisSol/bin/cmake/bin/cmake .. -DCMAKE_PREFIX_PATH=/project/k1488/kadek/myLibs/PUMGen_SeisSol/core \
-    -DHDF5_ROOT=/project/k1488/kadek/myLibs/cmakeSeisSol -DSIMMETRIX=ON \
-    -DSIMMETRIX_ROOT=/project/k1488/kadek/myLibs/PUMGen_SeisSol/simmodeler/15.0-210501/ -DSIM_MPI=mpich3 \
+module load cray-hdf5-parallel
+$HOMESW/bin/cmake/bin/cmake .. -DCMAKE_PREFIX_PATH=/project/k1587/kadek/meshing_software/core \
+    -DSIMMETRIX=ON \
+    -DSIMMETRIX_ROOT=/project/k1587/kadek/myLibs/meshing_software/simmodeler/16.0-220623/ -DSIM_MPI=mpich3 \
     -DCMAKE_BUILD_TYPE=Release\
     -DCMAKE_C_COMPILER=cc -DCMAKE_CXX_COMPILER=CC
 make -j 24
