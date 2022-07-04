@@ -49,7 +49,7 @@ wget http://glaros.dtc.umn.edu/gkhome/fetch/sw/parmetis/parmetis-4.0.3.tar.gz<br
 tar -xvf parmetis-4.0.3.tar.gz<br/>
 cd parmetis-4.0.3/<br/>
 edit ./metis/include/metis.h IDXTYPEWIDTH to be 64 (default is 32).<br/>
-make config cc=mpigcc cxx=mpigxx prefix=$HOMESW<br/>
+make config cc=cc cxx=CC prefix=$HOMESW<br/>
 make install<br/>
 cp build/Linux-x86_64/libmetis/libmetis.a $HOMESW/lib<br/>
 cp metis/include/metis.h $HOMESW/include<br/>
