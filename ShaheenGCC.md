@@ -81,6 +81,14 @@ make -j4 <br/>
 make install<br/>
 cd ../.. <br/>
 
+## LUA
+curl -R -O http://www.lua.org/ftp/lua-5.4.4.tar.gz<br/>
+tar zxf lua-5.4.4.tar.gz<br/>
+cd lua-5.4.4<br/>
+edit `INSTALL_TOP` to $HOMESW on Makefile<br/>
+make<br/>
+make install<br/>
+
 ## easi
 git clone https://github.com/SeisSol/easi.git<br/>
 cd easi<br/>
